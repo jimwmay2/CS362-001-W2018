@@ -72,7 +72,7 @@ public class CalDay {
 	 */
 	public void addAppt(Appt appt) {
 		if (appt.getValid()) {
-			for (int i = 0; i < getAppts().size(); i++) {
+			for (int i = 1; i < getAppts().size(); i++) {
 				//Put the appointment in the correct order - finish this
 				if (((Appt)getAppts().get(i)).getStartHour() >
 										appt.getStartHour()) {
@@ -151,12 +151,12 @@ public class CalDay {
 	 * are represented by 0-11 
 	 */
 	public int getMonth() {
-	    return month;
+	    return month+1;
 	}
 	
 	/** Gets year */
 	public int getYear() {
-	    return year;
+	    return year+1;
 	}
 
 	/**
