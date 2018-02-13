@@ -59,6 +59,21 @@ public class TimeTableTest {
 		          startYear ,
 		          title,
 		         description);
+		//add invalid appt
+		 startHour = 27;
+		 Appt appt4 = new Appt(startHour,
+		          startMinute ,
+		          startDay ,
+		          startMonth ,
+		          startYear ,
+		          title,
+		         description);
+		 //make appt recur
+		 int[] recurDays = {3,4,5};
+		 int recurBy = 2;
+		 int recurIncrement = 6;
+		 int recurNumber = 7;
+		 appt.setRecurrence(recurDays, recurBy, recurIncrement, recurNumber);
 		 
 		 TimeTable timeTable=new TimeTable();
 	        //Create a linked list of calendar days to return
@@ -67,6 +82,7 @@ public class TimeTableTest {
 		 listAppts.add(appt);
 		 listAppts.add(appt2);
 		 listAppts.add(appt3);
+		 listAppts.add(appt4);
 		 Collections.sort(listAppts);
 		 
 		 GregorianCalendar yesterday = new GregorianCalendar(2018,1,9);

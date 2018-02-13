@@ -61,7 +61,7 @@ public class ApptTest {
 		 int startHour=27;
 		 int startMinute=30;
 		 int startDay=15;
-		 int startMonth=01;											//dont need to test month, the code will throw DateOutOfRangeException
+		 int startMonth=01;											//dont need to test month, will crash the code with index out of range
 		 int startYear=2018;										//year can be anything
 		 String title="Birthday Party";								//title can be anything
 		 String description="This is my birthday party.";			//description can be anything
@@ -103,6 +103,7 @@ public class ApptTest {
 		 assertFalse(appt1.getValid());
 		 assertFalse(appt2.getValid());
 	 }
+
 
 
 }
