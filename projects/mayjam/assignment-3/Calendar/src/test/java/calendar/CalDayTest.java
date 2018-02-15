@@ -13,7 +13,7 @@ public class CalDayTest {
 	
 	/**
      * Test that the gets methods work as expected.
-     
+     */
 	//Test addAppt method
 	@Test
 	public void test() {
@@ -62,9 +62,9 @@ public class CalDayTest {
 		 
 		 
 		 //check toString method
-		 assertEquals("\t --- 0/30/2018 --- \n" + 
+		 assertEquals("\t --- "+ rightnow.get(Calendar.MONTH) +"/" + rightnow.get(Calendar.DAY_OF_MONTH) +"/" + rightnow.get(Calendar.YEAR) +" --- \n" + 
 		 		" --- -------- Appointments ------------ --- \n" + 
-		 		"\t1/30/2018 at 1:30pm ,Birthday Party 3, This is my birthday party.\n"+" \n" ,calday1.toString());
+		 		"\t" + (rightnow.get(Calendar.MONTH)+1) +"/" + rightnow.get(Calendar.DAY_OF_MONTH) +"/" + rightnow.get(Calendar.YEAR) +" at 1:30pm ,Birthday Party 3, This is my birthday party.\n"+" \n" ,calday1.toString());
 		 
 		 
 		 calday1.addAppt(appt);
@@ -82,6 +82,6 @@ public class CalDayTest {
 		assertEquals(rightnow.get(Calendar.YEAR),calday1.getYear());
 	}
 	
-*/
+
 	
 }

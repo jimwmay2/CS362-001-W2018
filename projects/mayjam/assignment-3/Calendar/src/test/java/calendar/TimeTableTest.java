@@ -15,7 +15,7 @@ public class TimeTableTest {
 	/**
      * 
      * Test that the gets methods work as expected.
-     
+     */
 	@Test
 	public void test() throws DateOutOfRangeException {
 	
@@ -103,9 +103,9 @@ public class TimeTableTest {
 		 assertEquals("[\t --- 1/9/2018 --- \n" + 
 		 		" --- -------- Appointments ------------ --- \n" + 
 		 		"\t1/9/2018 at 11:30am ,Birthday Party 0, This is my birthday party.\n" + " \n]",calDays.toString());
-		 /*
+		 
 		 CalDay calday1 = new CalDay(today);
-		 CalDay calday2 = new CalDay(nextMonth);
+		 CalDay calday2 = new CalDay(nextWeek);
 		 CalDay calday3 = new CalDay(later);
 		 
 		 calday1.addAppt(appt);
@@ -117,5 +117,5 @@ public class TimeTableTest {
 		//test permute
 		
 	}
-	*/
+	
 }

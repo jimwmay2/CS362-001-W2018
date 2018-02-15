@@ -8,6 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 public class ApptTest {
     /**
+     * 
      * Test that the gets methods work as expected.
      */
 	 @Test
@@ -29,13 +30,13 @@ public class ApptTest {
 		         description);
 	// assertions
 		 assertTrue(appt.getValid());
-		 assertEquals(21, appt.getStartHour());
-		 assertEquals(30, appt.getStartMinute());
-		 assertEquals(15, appt.getStartDay());
-		 assertEquals(01, appt.getStartMonth());
-		 assertEquals(2018, appt.getStartYear());
-		 assertEquals("Birthday Party", appt.getTitle());
-		 assertEquals("This is my birthday party.", appt.getDescription());    
+		 assertEquals(startHour, appt.getStartHour());
+		 assertEquals(startMinute, appt.getStartMinute());
+		 assertEquals(startDay, appt.getStartDay());
+		 assertEquals(startMonth, appt.getStartMonth());
+		 assertEquals(startYear, appt.getStartYear());
+		 assertEquals(title, appt.getTitle());
+		 assertEquals(description, appt.getDescription());    
 		 int[] recurDays = {3,4,5};
 		 int recurBy = 2;
 		 int recurIncrement = 6;
@@ -48,14 +49,19 @@ public class ApptTest {
 		 assertEquals(recurIncrement,appt.getRecurIncrement());
 		 assertEquals(recurNumber,appt.getRecurNumber());
 		 
+		 String daytime = "am";
+		 if(startHour > 12 ) {
+			 daytime = "pm";
+			 startHour -=12;
+		 }
 		 //test toString method
-		 assertEquals("\t1/15/2018 at 9:30pm ,Birthday Party, This is my birthday party.\n",appt.toString());
+		 assertEquals("\t" + startMonth + "/" + startDay + "/" + startYear + " at " + startHour + ":" + startMinute + daytime + " ," + title + ", " + description +"\n",appt.toString());
 	 }
 
 	 
 	/**
 	 * Test that the isValid method works as expected.
-    */
+    
 	 @Test
 	  public void test02()  throws Throwable  {
 		 int startHour=27;
@@ -73,9 +79,9 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
-		 startHour=21;
+		 startHour=23;
 		 startMinute=61;
-		 startDay=15;
+		 startDay=1;
 		  
 		 Appt appt1 = new Appt(startHour,
 		          startMinute ,
@@ -84,9 +90,9 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
-		 startHour=21;
-		 startMinute=30;
-		 startDay=40;
+		 startHour=23;
+		 startMinute=0;
+		 startDay=0;
 		 		  
 		 Appt appt2 = new Appt(startHour,
 		          startMinute ,
@@ -95,15 +101,15 @@ public class ApptTest {
 		          startYear ,
 		          title,
 		         description);
-		 startHour=21;
-		 startMinute=30;
-		 startDay=15;
+		 startHour=23;
+		 startMinute=0;
+		 startDay=1;
 		 
 		 assertFalse(appt.getValid());
 		 assertFalse(appt1.getValid());
 		 assertFalse(appt2.getValid());
 	 }
-
+*/
 
 
 }
