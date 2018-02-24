@@ -74,12 +74,15 @@ public class TimeTableTest {
 		          title,
 		         description);
 		 //make appt recur
-		 int[] recurDays = {3,4,5};
-		 int recurBy = 2;
+		 int[] recurDays = {};
+		 int[] recurDayz = {7};
+		 int recurBy = 7;
 		 int recurIncrement = 6;
-		 int recurNumber = 7;
-		 appt.setRecurrence(recurDays, recurBy, recurIncrement, recurNumber);
-		 
+		 int recurNumber = -1;
+		 appt.setRecurrence(recurDays, appt.RECUR_BY_WEEKLY, recurIncrement, Integer.MAX_VALUE);
+		 appt2.setRecurrence(recurDays, 2, 0, 7);
+		 appt3.setRecurrence(recurDays, recurBy, recurIncrement, 0);
+		 appt4.setRecurrence(recurDayz, recurBy, recurIncrement, recurNumber);
 		 TimeTable timeTable=new TimeTable();
 	        //Create a linked list of calendar days to return
 		 LinkedList<Appt> listAppts = new LinkedList<Appt>();
@@ -93,11 +96,13 @@ public class TimeTableTest {
 		 GregorianCalendar yesterday = new GregorianCalendar(2018,1,9);
 		 GregorianCalendar today = new GregorianCalendar(2018,1,10);
 		 GregorianCalendar nextWeek = new GregorianCalendar(2018,1,17);
-		 GregorianCalendar later = new GregorianCalendar(2018,2,10);
+		 GregorianCalendar later = new GregorianCalendar(2018,3,10);
 		 
 		 LinkedList<CalDay> calDays = new LinkedList<CalDay>();
 		 calDays = timeTable.getApptRange(listAppts, yesterday, nextWeek);
 		 assertEquals(8,calDays.size());
+		 calDays = timeTable.getApptRange(listAppts, yesterday, later);
+		 assertEquals(60,calDays.size());
 		 calDays = timeTable.getApptRange(listAppts, yesterday, today);
 		 assertEquals(1,calDays.size());
 		 assertEquals("[\t --- 1/9/2018 --- \n" + 

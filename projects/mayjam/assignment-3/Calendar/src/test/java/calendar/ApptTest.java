@@ -75,7 +75,7 @@ public class ApptTest {
 		 int startHour=27;
 		 int startMinute=0;
 		 int startDay=1;
-		 int startMonth=13;											//dont need to test month, will crash the code with index out of range
+		 int startMonth=12;											//dont need to test month, will crash the code with index out of range
 		 int startYear=2018;										//year can be anything
 		 String title="Birthday Party";								//title can be anything
 		 String description="This is my birthday party.";			//description can be anything
